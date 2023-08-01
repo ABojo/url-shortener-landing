@@ -1,0 +1,14 @@
+@mixin cta-button {
+  color: var(--color-white);
+  background-color: var(--color-cyan);
+  padding: 0.5rem 1.5rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-weight: var(--fw-2);
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-white);
+    opacity: 0.6;
+  }
+}

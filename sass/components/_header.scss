@@ -39,15 +39,7 @@
     }
 
     &--primary {
-      color: var(--color-white);
-      background-color: var(--color-cyan);
-      padding: 0.5rem 1.5rem;
-      border-radius: 5rem;
-
-      &:hover {
-        color: var(--color-white);
-        opacity: 0.6;
-      }
+      @include cta-button;
     }
   }
 }

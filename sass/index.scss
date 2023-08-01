@@ -1,4 +1,6 @@
 @use "./components/header";
+@use "./components/hero";
+
 :root {
   --color-cyan: hsl(180, 66%, 49%);
   --color-red: hsl(0, 87%, 67%);
