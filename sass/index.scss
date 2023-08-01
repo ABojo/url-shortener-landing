@@ -1,3 +1,25 @@
-* {
+:root {
+  --color-cyan: hsl(180, 66%, 49%);
+  --color-red: hsl(0, 87%, 67%);
+  --color-gray: hsl(0, 0%, 75%);
+  --color-gray-violet: hsl(257, 7%, 63%);
+  --color-dark-blue: hsl(255, 11%, 22%);
+  --color-dark-violet-1: hsl(257, 27%, 26%);
+  --color-dark-violet-2: hsl(260, 8%, 14%);
+
+  --fs-body: 1.125rem;
+  --fw-1: 500;
+  --fw-2: 700;
+}
+
+*,
+*::after,
+*::before {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
 }
