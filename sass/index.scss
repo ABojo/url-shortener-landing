@@ -1,3 +1,4 @@
+@use "./components/header";
 :root {
   --color-cyan: hsl(180, 66%, 49%);
   --color-red: hsl(0, 87%, 67%);
@@ -10,6 +11,9 @@
   --fs-body: 1.125rem;
   --fw-1: 500;
   --fw-2: 700;
+
+  --layout-max-width: 70rem;
+  --layout-width: 90%;
 }
 
 *,
