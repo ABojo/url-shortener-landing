@@ -49,27 +49,20 @@
     </section>
     <main class="main">
       <section class="shortener">
-        <form class="shortener__form">
-          <div class="shortener__input">
-            <input type="text" placeholder="Shorten a link here..." />
+        <form class="shortener__form" @submit="state.onFormSubmit">
+          <div class="shortener__loader" v-if="state.isLoading">
+            <span class="loader"></span>
+          </div>
+          <div class="shortener__input" :class="state.inputIsInvalid && 'shortener__input--error'">
+            <input @input="state.hideError" type="text" placeholder="Shorten a link here..." v-model="state.inputUrl" />
             <span class="shortener__error">Please enter a valid link!</span>
           </div>
           <button type="submit" class="shortener__submit">Shorten it!</button>
         </form>
-        <div class="shortener__card">
-          <p class="shortener__url">https://frontendmentor.com</p>
-          <a class="shortener__short" href="#">https://rel.link/A39Ax9S39</a>
-          <button class="shortener__copy">Copy</button>
-        </div>
-        <div class="shortener__card">
-          <p class="shortener__url">https://frontendmentor.com</p>
-          <a class="shortener__short" href="#">https://rel.link/A39Ax9S39</a>
-          <button class="shortener__copy">Copy</button>
-        </div>
-        <div class="shortener__card">
-          <p class="shortener__url">https://frontendmentor.com</p>
-          <a class="shortener__short" href="#">https://rel.link/A39Ax9S39</a>
-          <button class="shortener__copy">Copy</button>
+        <div v-for="link in state.shortenedLinks" class="shortener__card">
+          <p class="shortener__url">{{link.url}}</p>
+          <a class="shortener__short" target="_blank" :href="link.short">{{link.short}}</a>
+          <button @click="state.copyShortLink($event, link.short)" class="shortener__copy">Copy</button>
         </div>
       </section>
       <section class="advanced">
@@ -211,5 +204,7 @@
         </div>
       </footer>
     </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
