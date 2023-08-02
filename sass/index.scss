@@ -4,6 +4,7 @@
 @use "./components/advanced";
 @use "./components/boost";
 @use "./components/footer";
+@use "./components/loader";
 
 :root {
   --color-cyan: hsl(180, 66%, 49%);
