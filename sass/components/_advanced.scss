@@ -1,0 +1,79 @@
+@use "../mixins/" as *;
+
+.advanced {
+  @include layout-constrain;
+  text-align: center;
+  padding: 13rem 0;
+
+  &__heading {
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    color: var(--color-dark-violet-2);
+  }
+
+  &__paragraph {
+    max-width: 34rem;
+    font-size: 1.15rem;
+    margin: 0 auto;
+    color: var(--color-gray-violet);
+    margin-bottom: 6rem;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: var(--color-cyan);
+      width: 40rem;
+      height: 0.5rem;
+      top: 9.5rem;
+      left: 20rem;
+      z-index: 0;
+    }
+  }
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 2rem;
+  padding-top: 5rem;
+  border-radius: 0.25rem;
+  text-align: left;
+  position: relative;
+
+  &__icon {
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: var(--color-dark-violet-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: absolute;
+    top: -2.5rem;
+  }
+
+  &__heading {
+    font-size: 1.4rem;
+    color: var(--color-dark-violet-2);
+    margin-bottom: 1rem;
+  }
+
+  &__paragraph {
+    color: var(--color-gray-violet);
+  }
+
+  &:nth-child(2) {
+    top: 2.5rem;
+  }
+
+  &:nth-child(3) {
+    top: 5rem;
+  }
+}
