@@ -1,6 +1,7 @@
 @use "./components/header";
 @use "./components/hero";
 @use "./components/advanced";
+@use "./components/boost";
 
 :root {
   --color-cyan: hsl(180, 66%, 49%);
