@@ -3,7 +3,8 @@
 .advanced {
   @include layout-constrain;
   text-align: center;
-  padding: 13rem 0;
+  padding-top: 2.5rem;
+  padding-bottom: 13rem;
 
   &__heading {
     margin-bottom: 1rem;

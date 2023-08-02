@@ -1,0 +1,115 @@
+@use "../mixins/" as *;
+
+.shortener {
+  @include layout-constrain;
+  position: relative;
+  top: -5rem;
+
+  &__form {
+    background-image: url("../assets/images/bg-shorten-desktop.svg");
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-dark-violet-1);
+    width: 100%;
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    margin-right: 1rem;
+    flex: 1;
+    position: relative;
+
+    input {
+      font: inherit;
+      font-size: 1.4rem;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      border: none;
+      width: 100%;
+      border: 3px solid transparent;
+    }
+  }
+
+  &__input--error input {
+    border: 3px solid var(--color-red);
+
+    &::placeholder {
+      color: var(--color-red);
+      opacity: 0.6;
+    }
+  }
+
+  &__input--error &__error {
+    display: block;
+  }
+
+  &__error {
+    color: var(--color-red);
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  &__submit {
+    @include cta-button;
+    border: none;
+    font-size: 1.3rem;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  &__card {
+    background-color: var(--color-white);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+
+  &__url {
+    margin-right: auto;
+  }
+
+  &__short {
+    color: var(--color-cyan);
+    text-decoration: none;
+    font-weight: var(--fw-2);
+    margin-right: 2rem;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__copy {
+    @include cta-button;
+    align-self: stretch;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    min-width: 9rem;
+
+    &--copied {
+      background-color: var(--color-dark-violet-1);
+      cursor: auto;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
