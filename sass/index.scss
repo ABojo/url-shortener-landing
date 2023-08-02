@@ -10,6 +10,7 @@
   --color-dark-violet-1: hsl(257, 27%, 26%);
   --color-dark-violet-2: hsl(260, 8%, 14%);
   --color-white: #fff;
+  --color-main: hsl(0, 0%, 95%);
 
   --fs-body: 1.125rem;
   --fw-1: 500;
@@ -29,4 +30,8 @@
 
 html {
   font-family: "Poppins", sans-serif;
+}
+
+.main {
+  background-color: var(--color-main);
 }
