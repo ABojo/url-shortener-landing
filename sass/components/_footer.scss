@@ -1,0 +1,58 @@
+@use "../mixins" as *;
+.footer {
+  background-color: var(--color-dark-violet-2);
+  color: white;
+  padding: 4.5rem 0;
+
+  &__push {
+    margin-right: auto;
+  }
+
+  &__content {
+    @include layout-constrain;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__logo {
+    filter: brightness(0) invert(1);
+  }
+
+  &__nav {
+    display: flex;
+    gap: 5rem;
+    margin-right: 5rem;
+  }
+
+  &__heading {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &--social {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__section {
+    align-self: start;
+  }
+
+  &__link {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--color-cyan);
+    }
+  }
+}
