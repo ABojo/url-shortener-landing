@@ -40,3 +40,8 @@ html {
 .main {
   background-color: var(--color-main);
 }
+
+html,
+body {
+  overflow-x: hidden;
+}

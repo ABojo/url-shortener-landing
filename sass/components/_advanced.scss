@@ -1,4 +1,5 @@
 @use "../mixins/" as *;
+@use "../variables/breakpoints" as *;
 
 .advanced {
   @include layout-constrain;
@@ -10,6 +11,10 @@
     margin-bottom: 1rem;
     font-size: 2.4rem;
     color: var(--color-dark-violet-2);
+
+    @media (max-width: $bp-2) {
+      font-size: 2rem;
+    }
   }
 
   &__paragraph {
@@ -18,6 +23,10 @@
     margin: 0 auto;
     color: var(--color-gray-violet);
     margin-bottom: 6rem;
+
+    @media (max-width: $bp-2) {
+      font-size: 1.15rem;
+    }
   }
 
   &__cards {
@@ -26,16 +35,31 @@
     grid-gap: 2rem;
     position: relative;
 
+    @media (max-width: $bp-2) {
+      grid-template-columns: 1fr;
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+
     &::before {
       content: "";
       display: block;
       position: absolute;
       background-color: var(--color-cyan);
-      width: 40rem;
+      max-width: var(--layout-max-width);
+      width: var(--layout-width);
       height: 0.5rem;
       top: 9.5rem;
-      left: 20rem;
+      left: 0rem;
       z-index: 0;
+
+      @media (max-width: $bp-2) {
+        width: 0.5rem;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
@@ -48,6 +72,12 @@
   text-align: left;
   position: relative;
 
+  @media (max-width: $bp-2) {
+    max-width: 30rem;
+    align-items: center;
+    text-align: center;
+  }
+
   &__icon {
     height: 5.5rem;
     width: 5.5rem;
@@ -58,6 +88,11 @@
     border-radius: 100%;
     position: absolute;
     top: -2.5rem;
+
+    @media (max-width: $bp-2) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__heading {

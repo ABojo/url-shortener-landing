@@ -1,4 +1,5 @@
 @use "../mixins/" as *;
+@use "../variables/breakpoints" as *;
 
 .shortener {
   @include layout-constrain;
@@ -18,6 +19,10 @@
     border-radius: 1rem;
     margin-bottom: 2rem;
     position: relative;
+
+    @media (max-width: $bp-2) {
+      padding: 2rem 3rem;
+    }
   }
 
   &__loader {
@@ -50,6 +55,10 @@
       border: none;
       width: 100%;
       border: 3px solid transparent;
+
+      @media (max-width: $bp-2) {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -84,6 +93,11 @@
     padding: 1rem 3rem;
     border-radius: 1rem;
     cursor: pointer;
+
+    @media (max-width: $bp-2) {
+      font-size: 1.1rem;
+      padding: 0.5rem 2rem;
+    }
   }
 
   &__card {
@@ -94,6 +108,12 @@
     display: flex;
     align-items: center;
     font-size: 1.3rem;
+
+    @media (max-width: $bp-2) {
+      flex-direction: column;
+      align-items: start;
+      gap: 1rem;
+    }
   }
 
   &__url {
