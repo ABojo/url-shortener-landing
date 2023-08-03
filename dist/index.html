@@ -34,6 +34,30 @@
           </li>
         </ul>
       </nav>
+      <div class="mobile-nav">
+        <button @click="state.toggleMobileNav" class="mobile-nav__toggle" aria-label="Mobile navigation toggle">
+          <img src="assets/images/hamburger.png" alt="" />
+        </button>
+        <nav class="mobile-nav__nav" v-if="state.mobileNavOpen">
+          <ul class="mobile-nav__list">
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link" href="#">Features</a>
+            </li>
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link" href="#">Pricing</a>
+            </li>
+            <li class="mobile-nav__item mobile-nav__item--divider">
+              <a class="mobile-nav__link" href="#">Resources</a>
+            </li>
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link" href="#">Login</a>
+            </li>
+            <li class="mobile-nav__item">
+              <a class="mobile-nav__link mobile-nav__link--primary" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section class="hero">
       <div class="hero__message">

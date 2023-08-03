@@ -45,12 +45,14 @@ createApp({
     //state variables
     const state = ref({
       isLoading: false,
+      mobileNavOpen: false,
       inputUrl: "",
       inputIsInvalid: false,
       shortenedLinks: storage.get(storageKey) || [],
       onFormSubmit,
       hideError,
       copyShortLink,
+      toggleMobileNav,
     });
 
     //add link to state + storage
@@ -68,6 +70,10 @@ createApp({
       if (state.value.inputIsInvalid) {
         state.value.inputIsInvalid = false;
       }
+    }
+
+    function toggleMobileNav() {
+      state.value.mobileNavOpen = !state.value.mobileNavOpen;
     }
 
     function toggleLoading() {
@@ -110,4 +116,4 @@ createApp({
 
     return { state };
   },
-}).mount(".shortener");
+}).mount("body");

@@ -1,0 +1,61 @@
+@use "../mixins/" as *;
+@use "../variables/breakpoints" as *;
+
+.mobile-nav {
+  margin-left: auto;
+
+  &__toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    @media (max-width: $bp-3) {
+      display: block;
+    }
+  }
+
+  &__nav {
+    @include layout-constrain;
+    background-color: var(--color-dark-violet-1);
+    border-radius: 1rem;
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 3rem 1rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    &--divider {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: var(--fw-2);
+    font-size: 1.25rem;
+
+    &--primary {
+      @include cta-button;
+      width: 100%;
+      display: block;
+      padding-block: 0.75rem;
+    }
+  }
+}

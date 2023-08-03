@@ -5,6 +5,7 @@
 @use "./components/boost";
 @use "./components/footer";
 @use "./components/loader";
+@use "./components/mobile-nav";
 
 :root {
   --color-cyan: hsl(180, 66%, 49%);
