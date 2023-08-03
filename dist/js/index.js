@@ -85,8 +85,22 @@ createApp({
         toggleLoading();
 
         const json = await fetchShortUrl(state.value.inputUrl);
-        addNewLink({ url: json.result.original_link, short: json.result.full_short_link });
 
+        const originalLink = json.result.original_link;
+        const shortLink = json.result.full_short_link;
+        let displayLink = originalLink;
+
+        if (displayLink.length > 40) {
+          displayLink = `${displayLink.slice(0, 40)}...`;
+        }
+
+        const linkData = {
+          display: displayLink,
+          short: shortLink,
+          original: originalLink,
+        };
+
+        addNewLink(linkData);
         toggleLoading();
         clearInput();
       } else {

@@ -59,8 +59,8 @@
           </div>
           <button type="submit" class="shortener__submit">Shorten it!</button>
         </form>
-        <div v-for="link in state.shortenedLinks" class="shortener__card">
-          <p class="shortener__url">{{link.url}}</p>
+        <div class="shortener__card" v-for="link in state.shortenedLinks" :key="link.short">
+          <p class="shortener__url">{{link.display}}</p>
           <a class="shortener__short" target="_blank" :href="link.short">{{link.short}}</a>
           <button @click="state.copyShortLink($event, link.short)" class="shortener__copy">Copy</button>
         </div>
