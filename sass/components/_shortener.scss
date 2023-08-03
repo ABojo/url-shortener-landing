@@ -137,10 +137,14 @@
     align-items: center;
     font-size: 1.3rem;
 
-    @media (max-width: $bp-2) {
+    @media (max-width: $bp-1) {
       flex-direction: column;
       align-items: start;
       gap: 1rem;
+    }
+
+    @media (max-width: $bp-2) {
+      font-size: 1.15rem;
     }
 
     @media (max-width: $bp-4) {
@@ -151,6 +155,22 @@
 
   &__url {
     margin-right: auto;
+
+    &--desktop {
+      display: block;
+
+      @media (max-width: $bp-4) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media (max-width: $bp-4) {
+        display: block;
+      }
+    }
   }
 
   &__short {

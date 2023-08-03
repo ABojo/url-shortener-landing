@@ -40,6 +40,24 @@ function copyShortLink(e, url) {
   }, 3000);
 }
 
+function formatLinkData(json) {
+  const originalLink = json.result.original_link;
+  const shortLink = json.result.full_short_link;
+  const desktopLink = originalLink.length > 50 ? `${originalLink.slice(0, 50)}...` : originalLink;
+  const mobileLink = originalLink.length > 35 ? `${originalLink.slice(0, 35)}...` : originalLink;
+
+  console.log(desktopLink);
+
+  const linkData = {
+    desktop: desktopLink,
+    mobile: mobileLink,
+    short: shortLink,
+    original: originalLink,
+  };
+
+  return linkData;
+}
+
 //setup up vue app
 createApp({
   setup() {
@@ -93,21 +111,10 @@ createApp({
 
         const json = await fetchShortUrl(state.value.inputUrl);
 
-        const originalLink = json.result.original_link;
-        const shortLink = json.result.full_short_link;
-        let displayLink = originalLink;
-
-        if (displayLink.length > 40) {
-          displayLink = `${displayLink.slice(0, 40)}...`;
-        }
-
-        const linkData = {
-          display: displayLink,
-          short: shortLink,
-          original: originalLink,
-        };
+        const linkData = formatLinkData(json);
 
         addNewLink(linkData);
+
         toggleLoading();
         clearInput();
       } else {
