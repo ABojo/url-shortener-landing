@@ -9,6 +9,10 @@
   padding: 4rem;
   text-align: center;
 
+  @media (max-width: $bp-4) {
+    background-image: url("../assets/images/bg-boost-mobile.svg");
+  }
+
   &__heading {
     margin-bottom: 1rem;
     font-size: 2.4rem;
